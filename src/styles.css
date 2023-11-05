@@ -34,7 +34,10 @@ html, body, #content {
     background-color: gray;
     border-radius: 1rem;
     padding: 1rem;
+    -webkit-user-select: text;
+    user-select: none;
 }
+
 
 .main {
     text-align: center;

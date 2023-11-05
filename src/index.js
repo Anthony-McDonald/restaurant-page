@@ -31,14 +31,6 @@ function component() {
     button2.classList.add('tabbutton');
     button3.classList.add('tabbutton');
 
-    //Event listener tags added to buttons
-
-    // Still need to pretty up interface and sus out switching
-    // to other tabs
-
-    // Wants to add as module so look over the print.js in the last
-    // lesson
-
     button1.addEventListener("click", function(event) {
         buttonHandler('home');
     }) ;
