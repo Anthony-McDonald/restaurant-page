@@ -1,6 +1,4 @@
-* {
-    border: 1px solid red;
-}
+
 
 html, body, #content {
     height: 100%;
@@ -16,6 +14,13 @@ html, body, #content {
     background-color: green;
     color: white;
     text-align: center;
+    flex-shrink: 0;
+
+}
+
+.imgconstraint {
+    height: 15rem;
+    width: 15rem;
 }
 
 .btndivformat {

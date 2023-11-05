@@ -78,32 +78,30 @@ function component() {
 
 function buttonHandler(toSwitchTo) {
     console.log("called");
-
+    clearMain();
     switch(toSwitchTo) {
         case 'home':
-            switchMainTo(homeMain())
+            document.querySelector('#content').appendChild(homeMain());
             console.log('home');
             break;
         case 'menu':
-            switchMainTo(menuMain())
-            console.log('menu');
+            document.querySelector('#content').appendChild(menuMain());
             break;
         case "contact":
-            switchMainTo(contactMain())
-            console.log('contact');
+
+            document.querySelector('#content').appendChild(contactMain());
+
             break;
     }
+
+    document.querySelector('#content').appendChild(genFooter());
 
 }
 
 
-function switchMainTo(toAdd) {
-    // document.querySelector(".main").remove();
-    // document.querySelector(".footer").remove();
-
-    document.querySelector('#content').appendChild(contactMain());
-
-    document.querySelector('#content').appendChild(genFooter());
+function clearMain() {
+    document.querySelector(".main").remove();
+    document.querySelector(".footer").remove();
 
 
 
