@@ -1,0 +1,45 @@
+* {
+    border: 1px solid red;
+}
+
+html, body, #content {
+    height: 100%;
+    margin: 0;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.header {
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+
+.btndivformat {
+    background-color: lightgrey;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tabbutton {
+    background-color: gray;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.main {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.footer {
+    text-align: center;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+
+}
