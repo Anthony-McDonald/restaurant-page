@@ -101,7 +101,7 @@ function switchMainTo(toAdd) {
     // document.querySelector(".main").remove();
     // document.querySelector(".footer").remove();
 
-    document.querySelector('#content').appendChild(homeMain());
+    document.querySelector('#content').appendChild(contactMain());
 
     document.querySelector('#content').appendChild(genFooter());
 
