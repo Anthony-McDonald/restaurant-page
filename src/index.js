@@ -1,5 +1,8 @@
 import _ from 'lodash';
 import './styles.css';
+import homeMain from './home.js';
+import menuMain from './menu.js';
+import contactMain from './contact.js';
 
 function component() {
 
@@ -28,9 +31,23 @@ function component() {
     button2.classList.add('tabbutton');
     button3.classList.add('tabbutton');
 
-    // button1.addEventListener("click", switchTo('home'));
-    // button2.addEventListener("click", switchTo('menu'));
-    // button3.addEventListener("click", switchTo('contact'));
+    //Event listener tags added to buttons
+
+    // Still need to pretty up interface and sus out switching
+    // to other tabs
+
+    // Wants to add as module so look over the print.js in the last
+    // lesson
+
+    button1.addEventListener("click", function(event) {
+        buttonHandler('home');
+    }) ;
+    button2.addEventListener("click", function(event) {
+        buttonHandler('menu');
+    }) ;
+    button3.addEventListener("click", function(event) {
+        buttonHandler('contact');
+    }) ;
 
     button_div.appendChild(button1);
     button_div.appendChild(button2);
@@ -42,7 +59,7 @@ function component() {
     main_text_2.textContent = "If you don't believe me, just look at our chef!";
     const chef_img = document.createElement('img');
     chef_img.src = "../chef.jpg"
-    main.appendChild(button_div);
+    header.appendChild(button_div);
     main.appendChild(main_text_1);
     main.appendChild(main_text_2);
     main.appendChild(chef_img);
@@ -56,39 +73,49 @@ function component() {
     element.appendChild(main);
     element.appendChild(footer);
 
-    // const element = document.createElement('div');
-
-    // const btn = document.createElement('button');
-  
-    //  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  
-    // btn.innerHTML = 'Click me and check the console!';
-  
-    // btn.onclick = console.log("logging");
-  
-  
-    // element.appendChild(btn);
-
-
-
     return element
 }
 
-function switchTo(toSwitchTo) {
-    main_div = document.querySelector(".main");
+function buttonHandler(toSwitchTo) {
+    console.log("called");
 
     switch(toSwitchTo) {
         case 'home':
+            switchMainTo(homeMain())
             console.log('home');
             break;
         case 'menu':
+            switchMainTo(menuMain())
             console.log('menu');
             break;
         case "contact":
+            switchMainTo(contactMain())
             console.log('contact');
             break;
     }
 
+}
+
+
+function switchMainTo(toAdd) {
+    // document.querySelector(".main").remove();
+    // document.querySelector(".footer").remove();
+
+    document.querySelector('#content').appendChild(homeMain());
+
+    document.querySelector('#content').appendChild(genFooter());
+
+
+
+}
+
+
+function genFooter() {
+    const footer = document.createElement('div');
+    footer.classList.add("footer");
+    footer.textContent = "Anthony McDonald - The Odin Project";
+
+    return footer;
 }
 
 
